@@ -14,9 +14,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(username, password){
+    if("admin" == username && "admin" == password){
     console.log(username.value);
     console.log(password.value);
-    this.router.navigate(['register']);
+    this.router.navigate(['dashboard']);
+    }
+    
 
   }
 

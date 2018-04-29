@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes:Routes=[
   {
@@ -18,6 +19,11 @@ const appRoutes:Routes=[
   {
     path:'',
     component : LoginComponent
+  },
+
+  {
+    path:'dashboard',
+    component: DashboardComponent
   }
 
 ]
@@ -28,10 +34,12 @@ const appRoutes:Routes=[
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
