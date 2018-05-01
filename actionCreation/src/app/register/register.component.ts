@@ -6,19 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  name:String;
-  phoneNumber:Number;
-  age:Number;
-  address:{};
-  hobbies:String[];
-  favColor;
-  isXYZ:boolean;
-  title:String;
-
-  constructor() { }
+constructor() { }
 
   ngOnInit() {
+  }
+
+  log(x){
+    console.log(x);
   }
 
 }
