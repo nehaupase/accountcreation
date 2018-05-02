@@ -15,4 +15,17 @@ constructor() { }
     console.log(x);
   }
 
+  personalInformation=[
+    
+  ]
+
+}
+
+interface address{
+  address1:String,
+  address2:String,
+  street:String;
+  city:String;
+  pincode:Number;
+
 }

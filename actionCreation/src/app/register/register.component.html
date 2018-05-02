@@ -1,31 +1,132 @@
-<form class="form-group">
-  <h1>Personal Information</h1>
-    
-  <div class="form-group">
-  <input required ngModel name="firstName" #firstName="ngModel" (change) = "log(firstName)"
-  id="firstName" type="text" class="form-control">
+<form >
+        <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="firstName">First Name</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="firstName" 
+        #firstName="ngModel" (change) = "log(firstName)"id="firstName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+          <div *ngIf="firstName.errors.required"> First name required</div>
+          <div *ngIf="firstName.errors.minlength">first name should be atleast of 3 characters</div>
+          <div *ngIf="firstName.errors.maxlength">first name can not more then 30 characters</div>
+          
+        </div>
+      </div>
 
-  </div>
-  <div class="form-group">
-  <input required ngModel name="lastName" #lastName="ngModel" (change) = "log(lastName)"
-  id="lastName" type="text" class="form-control">
-  </div>
+      <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="lastName">Last Name</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="lastName" 
+        #lastName="ngModel" (change) = "log(lastName)"id="lastName" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+          <div *ngIf="lastName.errors.required"> Last name required</div>
+          <div *ngIf="lastName.errors.minlength">Last name should be atleast of 3 characters</div>
+          <div *ngIf="lastName.errors.maxlength">Last name can not more then 30 characters</div>
+          
+        </div>
+      </div>
 
-  <div class="form-group">
-  <input required ngModel name="email" #email="ngModel" (change) = "log(email)"
-  id="email" type="text" class="form-control">
-</div>
-
-<div class="form-group">
-    <label for="residentialAddress">Residential Address</label>
-    <textarea ngModel name="residentialAddress" #residentialAddress="ngModel" (change) = "log(residentialAddress)" 
-    id="residentialAddress" cols="30" rows="10" class="form-control">
-    </textarea>
+      <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="email">Email</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="email" 
+        #email="ngModel" (change) = "log(email)"id="email" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required"> Email  required</div>
+          <div *ngIf="email.errors.minlength">Email should be atleast of 3 characters</div>
+          <div *ngIf="email.errors.maxlength">Email can not more then 30 characters</div>
+          
+        </div>
     </div>
 
+    <br/>
+
+    <p align="left"> Residential Address </p>
+
     
+    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="address1">Address 1</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="address1" 
+        #address1="ngModel" (change) = "log(address1)"id="address1" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="address1.touched && !address1.valid">
+          <div *ngIf="address1.errors.required"> Address1  required</div>
+          <div *ngIf="address1.errors.minlength">Address1 should be atleast of 3 characters</div>
+          <div *ngIf="address1.errors.maxlength">Address1 can not more then 30 characters</div>
+          
+        </div>
+    </div>
+
+    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="address2">Address 2</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="address2" 
+        #address2="ngModel" (change) = "log(address2)"id="address2" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="address2.touched && !address2.valid">
+          <div *ngIf="address2.errors.required"> Address2  required</div>
+          <div *ngIf="address2.errors.minlength">Address2 should be atleast of 3 characters</div>
+          <div *ngIf="address2.errors.maxlength">Address2 can not more then 30 characters</div>
+          
+        </div>
+    </div>
+  
+
+    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="street">Street</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="street" 
+        #street="ngModel" (change) = "log(street)"id="street" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="street.touched && !street.valid">
+          <div *ngIf="street.errors.required"> Street  required</div>
+          <div *ngIf="street.errors.minlength">Street should be atleast of 3 characters</div>
+          <div *ngIf="street.errors.maxlength">Street can not more then 30 characters</div>
+          
+        </div>
+    </div>
+
+    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="city">City</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="city" 
+        #city="ngModel" (change) = "log(city)"id="city" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="city.touched && !city.valid">
+          <div *ngIf="city.errors.required"> City  required</div>
+          <div *ngIf="city.errors.minlength">City should be atleast of 3 characters</div>
+          <div *ngIf="city.errors.maxlength">City can not more then 30 characters</div>
+          
+        </div>
+    </div>
+
+    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+        <label for="pinCode">PinCode</label>
+        <!-- when the input field is associated with ngModel Angular will create formControl object for the field
+        When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
+       -->
+        <input required minlength="3" maxlength="30"  ngModel name="pinCode" 
+        #pinCode="ngModel" (change) = "log(pinCode)"id="pinCode" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="pinCode.touched && !pinCode.valid">
+          <div *ngIf="pinCode.errors.required"> PinCode  required</div>
+          <div *ngIf="pinCode.errors.minlength">PinCode should be atleast of 3 characters</div>
+          <div *ngIf="pinCode.errors.maxlength">PinCode can not more then 30 characters</div>
+          
+        </div>
+    </div>
     
-    
-</form>
+    <br/>
+    <input type="submit" value="submit"> <input type="submit" value="cancel">
+      </form>
 
 
