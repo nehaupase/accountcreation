@@ -1,5 +1,5 @@
-<form >
-        <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+<form  #userForm="ngForm"  align = "center" (ngSubmit)="onFormSubmit(userForm)">
+        <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="firstName">First Name</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -10,11 +10,10 @@
           <div *ngIf="firstName.errors.required"> First name required</div>
           <div *ngIf="firstName.errors.minlength">first name should be atleast of 3 characters</div>
           <div *ngIf="firstName.errors.maxlength">first name can not more then 30 characters</div>
-          
         </div>
       </div>
 
-      <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+      <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="lastName">Last Name</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -29,7 +28,7 @@
         </div>
       </div>
 
-      <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+      <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="email">Email</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -49,7 +48,7 @@
     <p align="left"> Residential Address </p>
 
     
-    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+    <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="address1">Address 1</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -64,7 +63,7 @@
         </div>
     </div>
 
-    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+    <div class="form-group" class="col-lg-4 col-lg-offset-4" > <!--This format of div is requirement of bootstrp -->
         <label for="address2">Address 2</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -80,7 +79,7 @@
     </div>
   
 
-    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+    <div class="form-group" class="col-lg-4 col-lg-offset-4" > <!--This format of div is requirement of bootstrp -->
         <label for="street">Street</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -95,7 +94,7 @@
         </div>
     </div>
 
-    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+    <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="city">City</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -110,7 +109,7 @@
         </div>
     </div>
 
-    <div class="form-group" class="col-sm-5"> <!--This format of div is requirement of bootstrp -->
+    <div class="form-group" class="col-lg-4 col-lg-offset-4"> <!--This format of div is requirement of bootstrp -->
         <label for="pinCode">PinCode</label>
         <!-- when the input field is associated with ngModel Angular will create formControl object for the field
         When we use ngModel we have to add name attribute in the input tag as the ngModel needs unique value to identify
@@ -121,12 +120,11 @@
           <div *ngIf="pinCode.errors.required"> PinCode  required</div>
           <div *ngIf="pinCode.errors.minlength">PinCode should be atleast of 3 characters</div>
           <div *ngIf="pinCode.errors.maxlength">PinCode can not more then 30 characters</div>
-          
         </div>
     </div>
     
     <br/>
-    <input type="submit" value="submit"> <input type="submit" value="cancel">
+    <input type="submit" value="submit"> <input type="submit" value="cancel" ng-click="cancelEdit()">
       </form>
 
 

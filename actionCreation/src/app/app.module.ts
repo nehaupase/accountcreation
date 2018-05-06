@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormControl } from '@angular/forms/src/model';
 
 const appRoutes:Routes=[
   {
@@ -25,6 +26,11 @@ const appRoutes:Routes=[
   {
     path:'dashboard',
     component: DashboardComponent
+  },
+
+  {
+    path:'login',
+    component : LoginComponent
   }
 
 ]
