@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import{Address} from '../Address';
+import { AddressService } from '../address.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-constructor(private router: Router) { }
+   resAddress = new Address();
+  corrAddress = new Address();
+  loopVal:number;
+constructor(private router: Router) { 
+  
+}
 
   ngOnInit() {
   }
@@ -17,13 +24,17 @@ constructor(private router: Router) { }
     console.log(x);
   }
 
-  onFormSubmit(userForm : NgForm){
+  onFormSubmit(userForm : NgForm, resAddress : Address, corrAddress: Address){
        console.log(userForm.value);
        console.log(userForm.controls['firstName'].value);
-  }
+       console.log(resAddress.address1);
+       console.log(corrAddress.address1);
+  }  
 
   cancelEdit(){
     this.router.navigate(['login']);
 
   }
+
+  
 }

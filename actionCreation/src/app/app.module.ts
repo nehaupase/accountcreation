@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { FormsModule }   from '@angular/forms';
+import {FormsModule}   from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -36,6 +36,11 @@ const appRoutes:Routes=[
 ]
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes) 
+    ],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -44,12 +49,7 @@ const appRoutes:Routes=[
     RegisterComponent,
     DashboardComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule { }
